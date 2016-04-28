@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TrickBmx</string>
+    <string name="action_settings">Configurações</string>
+    <string name="title_activity_nova_manobra">Nova Manobra</string>
+    <string name="title_activity_tab2">Manobras</string>
+    <string name="title_activity_tab1">Treinos</string>
+    <string name="Opções">Opções</string>
+    <string name="Excluir">Excluir</string>
+    <string name="title_activity_detalhes">Detalhes</string>
+</resources>
