@@ -38,6 +38,15 @@ public class Tab2 extends Activity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        try {
+            super.onResume();
+            this.carregarLista();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     // Método para carregar a lista................................................
     public void carregarLista() throws Exception {
         ArrayAdapter<Manobra> adapter;
@@ -54,15 +63,6 @@ public class Tab2 extends Activity {
         registerForContextMenu(this.mListView);
     }
 
-    @Override
-    protected void onResume() {
-        try {
-            super.onResume();
-            this.carregarLista();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     // método para carregar o menu de opçoes no item da listview
     @Override

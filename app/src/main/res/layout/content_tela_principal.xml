@@ -12,49 +12,49 @@
     <!--<TextView android:text="Olá Mundo!" android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <TabHost
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@android:id/tabhost"
-        android:layout_weight="1"
-        android:theme="@style/AppTheme">
+    <!--<TabHost-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@android:id/tabhost"-->
+        <!--android:layout_weight="1"-->
+        <!--android:theme="@style/AppTheme">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!-->-->
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/AppTheme"></TabWidget>
+            <!--<TabWidget-->
+                <!--android:id="@android:id/tabs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:theme="@style/AppTheme"></TabWidget>-->
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--<FrameLayout-->
+                <!--android:id="@android:id/tabcontent"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
 
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linearLayout"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/linearLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linearLayout2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
-                
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linearLayout3"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
+                <!-- -->
+            <!--</FrameLayout>-->
+        <!--</LinearLayout>-->
+    <!--</TabHost>-->
 </LinearLayout>
