@@ -39,6 +39,7 @@ public class OneFragment extends Fragment {
 
     @Override  // Inflate the layout for this fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.fragment_one, container, false);
     }
 
@@ -63,6 +64,7 @@ public class OneFragment extends Fragment {
             adapter = new ArrayAdapter<Manobra>(this.getContext(), adapterLayout, listaManobras);
             mListView = (ListView)getActivity().findViewById(R.id.listViewManobras);
             this.mListView.setAdapter(adapter);
+            registerForContextMenu(mListView);                                                   /// registrar a listview no menu de conteexto senão o menus de opções não carrega
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,9 +75,11 @@ public class OneFragment extends Fragment {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getActivity().getMenuInflater();
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+        menu.setHeaderTitle(listaManobras.get(info.position).getNome());
+        MenuInflater inflater = this.getActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_listview, menu);
-        //getMenuInflater().inflate(R.menu.menu_listview, menu);
+
     }
 
     @Override
@@ -85,8 +89,10 @@ public class OneFragment extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.action_Menu_Apagar) {
-            ManobrasDao m = new ManobrasDao();
-            m.deletar(listaManobras.get(info.position));
+            ManobrasDao m = new ManobrasDao(this.getContext());
+            Manobra manobra = listaManobras.get(info.position);
+            m.deletar(manobra.getId());
+
         }
 
         if (id == R.id.action_Menu_Alterar) {

@@ -77,8 +77,8 @@ public class Tab2 extends Activity {
         int id = item.getItemId();
 
         if (id == R.id.action_Menu_Apagar) {
-            ManobrasDao m = new ManobrasDao();
-            m.deletar(listaManobras.get(info.position));
+//            ManobrasDao m = new ManobrasDao();
+//            m.deletar(listaManobras.get(info.position));
         }
 
         if (id == R.id.action_Menu_Alterar) {

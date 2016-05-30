@@ -17,17 +17,19 @@ import britowellington.trickbmx.entidade.Manobra;
 public class ManobrasDao {
 
         private Context contexto;
-        private static final String TABELA_MANOBRA="manobra";
+        private static final String TABELA_MANOBRA = "manobra";
         private static final String SQL_SELECT_TODOS = "SELECT + FROM manobra";
-        private SQLiteDatabase bd;
+        private BDutil util;
+        private SQLiteDatabase db;
+
         //Construtor- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         public ManobrasDao(Context context){
             this.contexto =  context;
+            this.util = new BDutil(context);
         }
-        //Construtor para o método deletarManobra da classe Tab2 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - - - - - - -
-        public ManobrasDao(){
 
-        }
+
+
         //Método Inserir- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         public void inserir(Manobra manobra){
             //Objeto para armazenar os valores dos campos
@@ -75,8 +77,11 @@ public class ManobrasDao {
     }
 
     //Método deletar
-    public void deletar(Manobra manobra){
-        bd.delete("manobra", "_id = " + manobra.getId(), null);
-        Toast.makeText(this.contexto,"Deletado com sucesso!!", Toast.LENGTH_LONG).show();
+    public void deletar(int id_manobra){
+        db = util.getReadableDatabase();
+        String where = " _id = "+ String.valueOf(id_manobra);
+        db.delete(TABELA_MANOBRA, where, null );
+        Toast.makeText(this.contexto, "Feito!", Toast.LENGTH_LONG).show();
+        db.close();
     }
 }

@@ -9,13 +9,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
-
 public class BDutil extends SQLiteOpenHelper {
 
     private static final int VERSAO=1;
-    private static final String TABELA_MANOBRA="manobra";
-    private static final String DATABASE="db_manobra.db";
+    private static final String TABELA_MANOBRA = "manobra";
+    private static final String DATABASE = "db_manobra.db";
 
 
     public BDutil(Context context){
