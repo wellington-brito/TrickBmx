@@ -22,40 +22,29 @@ public class ManobrasDao {
         private BDutil util;
         private SQLiteDatabase db;
 
-        //Construtor- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         public ManobrasDao(Context context){
             this.contexto =  context;
             this.util = new BDutil(context);
         }
 
-
-
-        //Método Inserir- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         public void inserir(Manobra manobra){
-            //Objeto para armazenar os valores dos campos
             ContentValues values = new ContentValues();
 
-            //Definição de valores dos campos das tabelas - - - - - - - - - - - - - - - - - - - - - - -
             values.put("nome",manobra.getNome());
             values.put("descricao", manobra.getDescricao());
             values.put("dica", manobra.getDica());
-            // values.put("pathFoto",pessoa.getPathFoto());
-
+           
             BDutil bdUtil = new BDutil(contexto);
             bdUtil.getWritableDatabase().insert(TABELA_MANOBRA,null,values);
             bdUtil.close();
         }
-
-    // Método Listar................................................................................
+        
     public List<Manobra> listar() throws Exception{
 
-        // Definição da lista de Manobras
         List<Manobra> lista = new ArrayList<Manobra>();
-
-        // Definição da Instrução SQL
+        
         String sql = "Select nome, descricao from manobra order by nome";
 
-        // Objeto que recebe os registros do banco de dados
         BDutil bdUtil = new BDutil(contexto);
         Cursor cursor = bdUtil.getReadableDatabase().rawQuery(sql, null);
 
@@ -69,7 +58,6 @@ public class ManobrasDao {
         } catch (Exception e) {
             e.getMessage();
         } finally {
-            // fecha a conexão com o banco
             cursor.close();
             bdUtil.close();
         }
