@@ -23,38 +23,39 @@ public class ManobrasDao {
         private BDutil util;
         private SQLiteDatabase db;
 
-        //Construtor- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         public ManobrasDao(Context context){
             this.contexto =  context;
             this.util = new BDutil(context);
         }
 
+<<<<<<< HEAD
         //Método Inserir- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+=======
+>>>>>>> 29972e6b96d981094b8650d615f3c67799076664
         public void inserir(Manobra manobra){
-            //Objeto para armazenar os valores dos campos
             ContentValues values = new ContentValues();
 
-            //Definição de valores dos campos das tabelas - - - - - - - - - - - - - - - - - - - - - - -
             values.put("nome",manobra.getNome());
             values.put("descricao", manobra.getDescricao());
             values.put("dica", manobra.getDica());
-            // values.put("pathFoto",pessoa.getPathFoto());
-
+           
             BDutil bdUtil = new BDutil(contexto);
             bdUtil.getWritableDatabase().insert(TABELA_MANOBRA,null,values);
             bdUtil.close();
         }
-
-    // Método Listar................................................................................
+        
     public List<Manobra> listar() throws Exception{
 
-        // Definição da lista de Manobras
         List<Manobra> lista = new ArrayList<Manobra>();
+<<<<<<< HEAD
 
         // Definição da Instrução SQL
         String sql = "Select [_id], nome, descricao from manobra order by nome";
+=======
+        
+        String sql = "Select nome, descricao from manobra order by nome";
+>>>>>>> 29972e6b96d981094b8650d615f3c67799076664
 
-        // Objeto que recebe os registros do banco de dados
         BDutil bdUtil = new BDutil(contexto);
         Cursor cursor = bdUtil.getReadableDatabase().rawQuery(sql, null);
 
@@ -69,7 +70,6 @@ public class ManobrasDao {
         } catch (Exception e) {
             e.getMessage();
         } finally {
-            // fecha a conexão com o banco
             cursor.close();
             bdUtil.close();
         }
