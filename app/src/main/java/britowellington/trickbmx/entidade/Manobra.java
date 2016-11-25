@@ -1,18 +1,14 @@
 package britowellington.trickbmx.entidade;
 
-import android.app.Fragment;
-import android.database.DataSetObserver;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.ListView;
+
+import java.io.Serializable;
 
 /**
  * Created by Were on 04/04/2016.
  */
-public class Manobra implements Parcelable {
+public class Manobra implements Parcelable, Serializable {
     private int id;
     protected String nome;
     protected String descricao;

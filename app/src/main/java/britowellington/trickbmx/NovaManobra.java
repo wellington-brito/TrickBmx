@@ -45,7 +45,7 @@ public class NovaManobra extends AppCompatActivity {
         manobra.setDescricao(edtDescricao.getText().toString());
         //pessoa.setTelefone(edtTelefone.getText().toString());
 
-         manobrasDAO.inserir(manobra);
+        manobrasDAO.inserir(manobra);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Manobra Salva com Sucesso!").setTitle("Nova Manobra");

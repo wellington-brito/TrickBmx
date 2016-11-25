@@ -12,4 +12,9 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="two">Two</string>
+    <string name="title_activity_scrolling_activity_detalhes">Detalhes</string>
+    <string name="large_text1" id = "nomeManobra" ></string>
+    <string name="title_activity_alterar">Alterar</string>
+    <!--<string name="large_text2" id = "descricaoManobra " ></string>-->
+    <!--<string name="large_text3" id = "dicasManobra" ></string>-->
 </resources>
